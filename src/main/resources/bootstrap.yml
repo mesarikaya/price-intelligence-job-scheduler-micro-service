@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: price-intelligence-job-scheduler
+  cloud:
+    config:
+      uri: http://localhost:8888
+      retry:
+        max-attempts: 10
+        initial-interval: 1000
+      fail-fast: true
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discoveryserver:secretpassword@localhost:8761/eureka
+
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true

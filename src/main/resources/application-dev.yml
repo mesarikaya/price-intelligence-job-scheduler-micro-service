@@ -1,0 +1,24 @@
+server:
+  port: 8010
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: error
+    reactor:
+      netty: INFO
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: price-intelligence-config-server
+      uri: http://localhost:8888
+  devtools:
+    restart:
+      enabled: true
+
